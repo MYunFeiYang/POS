@@ -21,6 +21,7 @@ function cart_item_Build_item_sheet(cart_item) {
             sum:cart_item[i].price*count
         };
         item_sheet.push(Item);
+        i+=count;
     }
     return item_sheet;
 }
@@ -40,7 +41,6 @@ function buildSheetString(item_sheet) {
     return result+result1;
 }
 
-function printReceipt() {
     var cart_item=[
         {
             barcode: 'ITEM000000',
@@ -92,6 +92,5 @@ function printReceipt() {
             price: 2.00
         }
     ];
-    var Receipt=cart_item_Build_item_sheet(cart_item);
+    var Receipt=buildSheetString(cart_item);
     console.log(Receipt);
-}
