@@ -2,8 +2,9 @@
  * Created by yunfeiyang on 17-7-11.
  */
 "use strict"
-function cart_itemTOitem_sheet(cart_item) {
+function cart_item_Build_item_sheet(cart_item) {
     var item_sheet = [];
+    var Item={};
     for (var i = 0; i < cart_item.length; i++) {
         var count=1;
         for(var j=i;j<cart_item.length;j++){
@@ -11,7 +12,7 @@ function cart_itemTOitem_sheet(cart_item) {
                 count++;
             }
         }
-        var count={
+        Item={
             barcode:cart_item[i].barcode,
             name:cart_item[i].name,
             unit:cart_item[i].unit,
@@ -19,12 +20,12 @@ function cart_itemTOitem_sheet(cart_item) {
             count:count,
             sum:cart_item[i].price*count
         };
-        item_sheet.push(count);
+        item_sheet.push(Item);
     }
     return item_sheet;
 }
-function buildSheetString(cart_sheet) {
-    var pos_Sheet=cart_itemTOitem_sheet(cart_sheet);
+function buildSheetString(item_sheet) {
+    var pos_Sheet=cart_item_Build_item_sheet(item_sheet);
     var result= `***<没钱赚商店>收据***`+`\n`;
     var sumAll=0;
     for(let i=0;i<pos_Sheet.length;i++) {
@@ -91,7 +92,6 @@ function printReceipt() {
             price: 2.00
         }
     ];
-    var Receipt=buildSheetString(cart_item);
+    var Receipt=cart_item_Build_item_sheet(cart_item);
     console.log(Receipt);
-
 }
