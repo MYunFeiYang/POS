@@ -43,14 +43,13 @@ function byItem_barcodeToItem(barcodes) {
         }
     ];
     var Item=[];
-for(var i=0;i<barcodes.length;i++){
-    for (var j=0;Items.length;j++){
-        if (barcodes[i]==Items[i].barcode)
-            Item.push({barcode:Items[i].barcode,name:Items[i].name,unit:Items[i].unit,price:Items[i].price});
-
+for(let barcode of barcodes){
+    for (let item of Items){
+        if (barcode==item.barcode)
+            Item.push({barcode:item.barcode,name:item.name,unit:item.unit,price:item.price});
     }
 }
-    return Item
+    return Item;
 }
 
 /*去重并计数*/
@@ -84,7 +83,7 @@ function buildSheetString(item_sheet) {
     var result= `***<没钱赚商店>收据***`+`\n`;
     var sumAll=0;
     for(let i=0;i<pos_Sheet.length;i++) {
-        result+=` 名称：${pos_Sheet[i].name}，数量：${pos_Sheet[i].count}瓶，单价：${pos_Sheet[i].price}(元)，小计：${pos_Sheet[i].sum}(元)`+`\n`;
+        result+=` 名称：${pos_Sheet[i].name}，数量：${pos_Sheet[i].count}${pos_Sheet[i].unit}，单价：${pos_Sheet[i].price}(元)，小计：${pos_Sheet[i].sum}(元)`+`\n`;
         sumAll+=pos_Sheet[i].sum;
     }
 
