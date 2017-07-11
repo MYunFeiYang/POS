@@ -15,12 +15,26 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="POS_Project_v0.1.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/POS_Project_v0.1.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1395">
+              <caret line="95" column="25" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#44#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="POS_Project_v0.2.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/POS_Project_v0.2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="825">
+              <caret line="57" column="45" lean-forward="false" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#44#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,9 +59,9 @@
         <option value="$PROJECT_DIR$/score_sheet.js" />
         <option value="$PROJECT_DIR$/POS Project v0.js" />
         <option value="$PROJECT_DIR$/POS_Project_v0.js" />
-        <option value="$PROJECT_DIR$/POS_Project_v0.2.js" />
         <option value="$PROJECT_DIR$/POS_v0_main.js" />
         <option value="$PROJECT_DIR$/POS_Project_v0.1.js" />
+        <option value="$PROJECT_DIR$/POS_Project_v0.2.js" />
       </list>
     </option>
   </component>
@@ -115,7 +129,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.POS_Project_v0.js">
+  <component name="RunManager" selected="Node.js.POS_Project_v0.2.js">
     <configuration default="false" name="main.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="main.js" working-dir="$PROJECT_DIR$">
       <method />
     </configuration>
@@ -126,6 +140,9 @@
       <method />
     </configuration>
     <configuration default="false" name="POS_v0_main.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="POS_v0_main.js" working-dir="$PROJECT_DIR$">
+      <method />
+    </configuration>
+    <configuration default="false" name="POS_Project_v0.2.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="POS_Project_v0.2.js" working-dir="$PROJECT_DIR$">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -194,18 +211,20 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Node.js.main.js" />
       <item index="1" class="java.lang.String" itemvalue="Node.js.POS_Project_v0.1.js" />
       <item index="2" class="java.lang.String" itemvalue="Node.js.POS_Project_v0.js" />
       <item index="3" class="java.lang.String" itemvalue="Node.js.POS_v0_main.js" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.POS_Project_v0.2.js" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.POS_Project_v0.js" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.POS_v0_main.js" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.POS_Project_v0.1.js" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.main.js" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Node.js.POS_Project_v0.2.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.POS_Project_v0.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.POS_v0_main.js" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.POS_Project_v0.1.js" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.main.js" />
       </list>
     </recent_temporary>
   </component>
@@ -226,12 +245,12 @@
       <workItem from="1499737855872" duration="100000" />
       <workItem from="1499737957782" duration="34000" />
       <workItem from="1499740609836" duration="9669000" />
-      <workItem from="1499751488864" duration="3131000" />
+      <workItem from="1499751488864" duration="5427000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22623000" />
+    <option name="totallyTimeSpent" value="24919000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -405,8 +424,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/POS_Project_v0.1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        <state relative-caret-position="1395">
+          <caret line="95" column="25" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
           </folding>
@@ -415,9 +434,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/POS_Project_v0.2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="825">
+          <caret line="57" column="45" lean-forward="false" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
