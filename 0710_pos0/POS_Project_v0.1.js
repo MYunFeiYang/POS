@@ -2,31 +2,33 @@
  * Created by yunfeiyang on 17-7-11.
  */
 "use strict"
+/*去重*/
 function cart_item_Build_item_sheet(cart_item) {
-    var item_sheet = [];
-    var Item={};
-    for (var i = 0; i < cart_item.length; i++) {
-        var count=1;
-        for(var j=i;j<cart_item.length;j++){
-            if (cart_item[i].barcode==cart_item[j].barcode){
+   var barcodes=[];
+   barcodes[0]=cart_item[0].barcode;
+   var tag=barcodes[0];
+   for (let item of cart_item){
+       if (tag!=item);
+       barcodes.push(item);
+   }
+   return barcodes;
+}
+/*计数*/
+function calculate(cart_item) {
+    var item_sheet=[];
+    var barcodes=cart_item_Build_item_sheet(cart_item);
+    var count=0;
+    for (let barcode of barcodes) {
+        for (var i=0;cart_item.length;i++) {
+            if (barcode==cart_item[i].barcode)
                 count++;
-            }
-        }
-        Item={
-            barcode:cart_item[i].barcode,
-            name:cart_item[i].name,
-            unit:cart_item[i].unit,
-            price:cart_item[i].price,
-            count:count,
-            sum:cart_item[i].price*count
-        };
-        item_sheet.push(Item);
-        i+=count;
+                }
+      item_sheet.push({barcode:cart_item.barcode,name:cart_item.name,unit:cart_item.unit,price:cart_item.price,count:count,sum:cart_item.price*count});
     }
     return item_sheet;
 }
 function buildSheetString(item_sheet) {
-    var pos_Sheet=cart_item_Build_item_sheet(item_sheet);
+    var pos_Sheet=calculate(item_sheet);
     var result= `***<没钱赚商店>收据***`+`\n`;
     var sumAll=0;
     for(let i=0;i<pos_Sheet.length;i++) {
