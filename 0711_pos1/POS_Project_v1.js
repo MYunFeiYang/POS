@@ -85,14 +85,43 @@ function calculate(barcode1) {
     var Item=byItem_barcodeToItem(barcode1);
     var barcode=Deduplication(barcode1);
     var Item_sheet=[];
-    var count=0;
+    var k=0;
     for (let bar of barcode){
+        var count=0;
         for (var i=0;i<Item.length;i++){
-            count+=Item[i].count;
+            if (bar==Item[i].barcode) {
+                count += Item[i].count;
+            }
         }
-        Item_sheet.push({barcode:Item[i].barcode,name:Item[i].name,unit:Item[i].unit,price:Item[i].price,count:count});
+        Item_sheet.push({barcode:Item[k].barcode,name:Item[k].name,unit:Item[k].unit,price:Item[k].price,count:count});
+        k++;
     }
     return Item_sheet;
+}
+/*将对象数组拼接成字符串*/
+function buildingSheetString(item_sheet) {
+    var Item_sheet=calculate(item_sheet);
+    var string='***<没钱赚商店>收据***'+'\n';
+    var sum=0;
+    var jieyue=0;
+    for (var i=0;i<Item_sheet.length;i++){
+        if(Item_sheet[i].count>2){
+            string+='名称：'+Item_sheet[i].name+'，数量：'+Item_sheet[i].count+Item_sheet[i].unit+'，单价：'+
+                Item_sheet[i].price+'(元)，小计：'+Item_sheet[i].count*Item_sheet[i].price-Item_sheet[i].price+'(元)'+'\n';
+            sum+=Item_sheet[i].count*Item_sheet[i].price-Item_sheet[i].price;
+            jieyue+=Item_sheet[i].price;
+        }
+        else {
+            string+='名称：'+Item_sheet[i].name+'，数量：'+Item_sheet[i].count+Item_sheet[i].unit+'，单价：'+
+                Item_sheet[i].price+'(元)，小计：'+Item_sheet[i].count*Item_sheet[i].price+'(元)'+'\n';
+            sum+=Item_sheet[i].count*Item_sheet[i].price;
+        }
+    }
+    string+=`----------------------
+总计：`+sum+`(元)
+节省：`+jieyue+`(元)
+**********************`;
+    return string;
 }
 /*打印输出清单*/
 var barcode=[
@@ -107,6 +136,6 @@ var barcode=[
     'ITEM000005'
 ];
 
-var Receipt=calculate(barcode);
+var Receipt=buildingSheetString(barcode);
 console.log(Receipt);
 
