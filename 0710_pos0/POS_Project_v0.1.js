@@ -3,29 +3,40 @@
  */
 "use strict"
 /*去重*/
-function cart_item_Build_item_sheet(cart_item) {
-   var barcodes=[];
-   barcodes[0]=cart_item[0].barcode;
-   var tag=barcodes[0];
-   for (let item of cart_item){
-       if (tag!=item);
-       barcodes.push(item);
-   }
-   return barcodes;
+function Deduplication(Item) {
+    var barcode=[];
+    barcode[0]={barcode:Item[0].barcode,name:Item[0].name,unit:Item[0].unit,price:Item[0].price};
+    var tag=Item[0].barcode;
+    for(let item of Item){
+        if (tag!=item.barcode) {
+            tag=item.barcode;
+            barcode.push({barcode:item.barcode,name:item.name,unit:item.unit,price:item.price});
+        }
+    }
+    return barcode;
 }
 /*计数*/
-function calculate(cart_item) {
-    var item_sheet=[];
-    var barcodes=cart_item_Build_item_sheet(cart_item);
-    var count=0;
-    for (let barcode of barcodes) {
-        for (var i=0;cart_item.length;i++) {
-            if (barcode==cart_item[i].barcode)
-                count++;
-                }
-      item_sheet.push({barcode:cart_item.barcode,name:cart_item.name,unit:cart_item.unit,price:cart_item.price,count:count,sum:cart_item.price*count});
+function calculate(Item) {
+    var barcode = Deduplication(Item);
+    var Item_sheet = [];
+    for (var j = 0; j < barcode.length;) {
+        var count = 0;
+        for (var i = 0; i < Item.length; i++) {
+            if (barcode[j].barcode == Item[i].barcode) {
+                count ++;
+            }
+        }
+        Item_sheet.push({
+            barcode: barcode[j].barcode,
+            name: barcode[j].name,
+            unit: barcode[j].unit,
+            price: barcode[j].price,
+            count: count,
+            sum:barcode[j].price*count
+        });
+        j++;
     }
-    return item_sheet;
+    return Item_sheet;
 }
 function buildSheetString(item_sheet) {
     var pos_Sheet=calculate(item_sheet);
@@ -43,7 +54,7 @@ function buildSheetString(item_sheet) {
     return result+result1;
 }
 
-    var cart_item=[
+    var item=[
         {
             barcode: 'ITEM000000',
             name: '可口可乐',
@@ -94,5 +105,5 @@ function buildSheetString(item_sheet) {
             price: 2.00
         }
     ];
-    var Receipt=buildSheetString(cart_item);
+    var Receipt=buildSheetString(item);
     console.log(Receipt);
